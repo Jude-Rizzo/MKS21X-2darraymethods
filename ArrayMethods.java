@@ -2,6 +2,10 @@ public class ArrayMethods{
 
   public static int rowSum(int[][] ary, int x){
     int sum = 0;
+    
+    if(x > ary.length){
+      return 0;
+    }
     for (int i = 0; i < ary[x].length; i++){
       sum += ary[x][i];
     }
@@ -26,7 +30,7 @@ public class ArrayMethods{
   }
 
 
-  public static int[] allColumnSums(int[][] ary){
+  public static int[] allColSums(int[][] ary){
     int[] ans = new int[ary.length];
     int max = 0;
     for (int i = 0; i < ary.length; i++){
@@ -55,8 +59,8 @@ public class ArrayMethods{
     }
 
 
-    public static boolean isColoumnMagic(int[][] ary){
-      int[] columnSum = allColumnSums(ary);
+    public static boolean isColumnMagic(int[][] ary){
+      int[] columnSum = allColSums(ary);
       for(int i = 0; i < columnSum.length - 1; i++){
         if(columnSum[i] != columnSum[i + 1])
           return false;
